@@ -74,12 +74,12 @@ let arrayRuoli = ["Founder & CEO",
                 "Graphic Designer",
 ];
 
-let arrayImg = ["wayne-barnett-founder-ceo.jpg",
-                "angela-caroll-chief-editor.jpg",
-                "walter-gordon-office-manager.jpg",
-                "angela-lopez-social-media-manager.jpg",
-                "scott-estrada-developer.jpg",
-                "barbara-ramos-graphic-designer.jpg"
+let arrayImg = ["img/wayne-barnett-founder-ceo.jpg",
+                "img/angela-caroll-chief-editor.jpg",
+                "img/walter-gordon-office-manager.jpg",
+                "img/angela-lopez-social-media-manager.jpg",
+                "img/scott-estrada-developer.jpg",
+                "img/barbara-ramos-graphic-designer.jpg"
 ];
 
 let arrayObject = [];
@@ -127,11 +127,12 @@ function createNewCard(array){
     let cardName = document.createElement("span");
     cardName.classList.add("nome");
     let cardRole = document.createElement("span");
-    cardRole.classList.add("ruolo")
+    cardRole.classList.add("ruolo");
+    
     newCard.append(imgContainer);
     newCard.append(cardName);
     newCard.append(cardRole);
-    imgContainer.append("img");
+    imgContainer.append(img);
 
     img.src = array.img;
     cardName.innerHTML = array.nome;
