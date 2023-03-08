@@ -92,9 +92,13 @@ for (let i=0; i<arrayNomi.length; i++){
 for (let i=0; i < arrayObject.length; i++){
    for(let chiave in arrayObject[i]){
     console.log(arrayObject[i][chiave]);
-    teamContainerEl.append(document.createElement("div").innerHTML = arrayObject[i][chiave]);
    }
+
+   let newCard = createNewCard(arrayObject[i]);
+
 }
+
+
 
 
 
@@ -110,4 +114,31 @@ function newObject(user,role,urlImg){
         img : urlImg
     };
     return newObject;
+}
+
+function createNewCard(array){
+    let newCard = document.createElement("div");
+    newCard.classList.add("card");
+    teamContainerEl.append(newCard);
+    let imgContainer = document.createElement("div");
+    imgContainer.classList.add("img-container");
+    let img = document.createElement("img");
+    img.classList.add("my-img");
+    let cardName = document.createElement("span");
+    cardName.classList.add("nome");
+    let cardRole = document.createElement("span");
+    cardRole.classList.add("ruolo")
+    newCard.append(imgContainer);
+    newCard.append(cardName);
+    newCard.append(cardRole);
+    imgContainer.append("img");
+
+    img.src = array.img;
+    cardName.innerHTML = array.nome;
+    cardRole.innerHTML = array.ruolo;
+
+    return newCard;
+    
+
+
 }
