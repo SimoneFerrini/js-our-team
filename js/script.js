@@ -90,14 +90,10 @@ for (let i=0; i<arrayNomi.length; i++){
 }
 
 for (let i=0; i < arrayObject.length; i++){
-    console.log(arrayObject[i].nome + " "+
-        arrayObject[i].ruolo + " "+
-        arrayObject[i].img );
-
-teamContainerEl.append(document.createElement("div").innerText= arrayObject[i].nome + " "+
-                        arrayObject[i].ruolo + " "+
-                        arrayObject[i].img 
-                    ) ;
+   for(let chiave in arrayObject[i]){
+    console.log(arrayObject[i][chiave]);
+    teamContainerEl.append(document.createElement("div").innerHTML = arrayObject[i][chiave]);
+   }
 }
 
 
